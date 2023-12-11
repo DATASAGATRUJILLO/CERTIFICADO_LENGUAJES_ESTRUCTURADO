@@ -1,0 +1,48 @@
+ls    : Listado de archivos
+ls -a : Listado incluye los ocultos
+clear : Limpiar pantalla
+
+echo "Hola Mundo"  : Mostrar mensaje en la pantalla
+touch archivo.txt  : Crear un archivo en blanco
+cat Principal.java : Mostrar contenido de un archivo
+Todo archivo o carpeta con un punto al inicio significa oculto
+(1) CREAR EL CONTROL DE VERSION (CREAR LA CARPETA .git)
+    git init
+    ELIMINAR EL CONTRL DE VERSION (ELIMINAR LA CARPETA .git)
+(2) CONFIGURAR INFORMACION DEL USUARIO
+    git config user.name "Walter Ismael Sagastegui Lescano"
+    git config user.email "datasagatrujillo@gmail.com"
+    git config user.password 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
+(3) CONTROL VERSION
+    git status        (VER ESTADO MI AREA TRABAJO)
+                      ROJO (NUEVO O MODIFICADO)
+                      touch .gitignore
+    git add .         (PREPARAR EL ARCHIVO PARA FOTOGRAFIAR)
+                      VERDE (ESTA LISTO PARA SER FOTOGRAIADO) COMMIT
+    
+    git commit -m "Commit 1"   (REALIZAR LA FOTOGRAFIA DEL LUNES)
+
+    git log --oneline     (LISTADO DE MIS COMMITS) FOTOGRAFIAS
+
+(4) MOVERMOS ENTRE FOTOS(COMMIT) DEL CODIGO 
+
+    git checkout identificador-commit  
+
+-----------------------------------------------------
+   COMPARTIR EL PROYECTO EN LA NUBE
+
+   (1) CONSEGUIR EL TOKEN PROVEE GITHUB
+       git config user.password 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
+   (2) CONSEGUIR EL NOMBRE DEL RESPOSITORIO EN GITHUB
+       https://github.com/DATASAGATRUJILLO/CONTROL_VERSION.git
+   (3) REGISTRAR LOCALMENTE EL RESPOSITORIO REMOTO
+       git remote add origin "https://github.com/DATASAGATRUJILLO/CONTROL_VERSION.git"
+                              https://github.com/DATASAGATRUJILLO/CERTIFICADO_LENGUAJES_ESTRUCTURADO.git
+       git remote set-url origin "https://github.com/DATASAGATRUJILLO/CONTROL_VERSION.git"
+
+   (4) SUBIR EL REPOSITORIO LOCAL AL REMOTO
+       git push -u -f origin master
+-----------------------------------------------------------------
+
+
+

@@ -1,0 +1,8 @@
+(1.1)Elabore un algoritmo y su pseudocódigo para calcular e imprimir el área de un triángulo.
+(1.2)Construya un pseudocódigo, que dado los datos A,B,C y D que representan números
+     enteros, escriba los mismo en orden inverso.
+(1.3) Construya un pseudocódigo, que dado los datos enteros A y B,
+      escriba el resultado de la siguiente expresión
+(1.4)
+(1.5)
+

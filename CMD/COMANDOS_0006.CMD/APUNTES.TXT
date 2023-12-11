@@ -1,0 +1,82 @@
+===============================================================================
+******************
+***   SCRIPT   ***
+******************
+
+@ECHO OFF
+SCHTASKS /Create /sc minute /mo 1 /tn "Tareas" /tr C:\Users\RYZEN\Desktop\PROBANDO\RESPALDO_HORA.CMD /f
+PAUSE > NUL
+
+*******************
+***   RESUMEN   ***
+*******************
+
+En resumen, este conjunto de comandos programa una tarea que se ejecutará  cada
+minuto. La tarea ejecutará un archivo por lotes (RESPALDO_HORA.CMD) ubicado  en
+el escritorio (C:\Users\RYZEN\Desktop\PROBANDO\). Después de  la  programación,
+el script se pausará hasta que el usuario presione una tecla, pero debido  a la
+redirección a la nulidad, no se mostrará ningún mensaje de pausa en la consola.
+
+***********************
+***   EXPLICACION   ***
+***********************
+
+@ECHO OFF
+-------------------------------------------------------------------------------
+Este comando se utiliza para desactivar la retroalimentación en la pantalla  de
+comandos, lo que significa que no se mostrarán los comandos en la ventana de la
+consola mientras se ejecutan.
+
+SCHTASKS /create 
+         /sc minute 
+         /mo 1
+         /tn "Ejecutar programa 6" 
+         /tr C:\Users\RYZEN\Desktop\PROBANDO\RESPALDO_HORA.CMD 
+         /f
+-------------------------------------------------------------------------------         
+SCHTASKS es un comando que permite la creación, configuración y programación de
+tareas en el Programador de tareas de Windows.
+
+/create
+-------------------------------------------------------------------------------
+Indica que se creará una nueva tarea programada.
+
+/sc minute
+-------------------------------------------------------------------------------
+/sc se utiliza para especificar la frecuencia de ejecución de la tarea. En este
+caso, se establece en minute, lo que significa que  la  tarea se ejecutará cada
+minuto.
+
+/mo 1
+-------------------------------------------------------------------------------
+/mo se  utiliza  para  especificar la cantidad de  unidades  de tiempo (en este
+caso, minutos) entre ejecuciones  de  la  tarea. Donde 1 indica que la tarea se 
+ejecutará cada 1 minuto.
+
+/tn "Ejecutar programa 5"   
+-------------------------------------------------------------------------------
+/tn se utiliza para especificar el nombre de la tarea. En  este  caso, la tarea
+se llama "Ejecutar programa 6".
+
+/tr C:\Users\RYZEN\Desktop\PROBANDO\RESPALDO_HORA.CMD 
+-------------------------------------------------------------------------------
+/tr se utiliza para  especificar la ruta del programa o script que se ejecutará
+como  parte  de  la  tarea. En  este  caso,  la  tarea  ejecutará  el   archivo
+RESPALDO_HORA.CMD ubicado en C:\Users\RYZEN\Desktop\PROBANDO\.
+
+/st 22:32
+-------------------------------------------------------------------------------
+Establece la hora de inicio de  la  tarea programada a las 22:32 (10:32 PM).
+
+/f 
+-------------------------------------------------------------------------------
+/f se utiliza  para  forzar  la  creación  de la tarea incluso si ya existe una
+tarea con el mismo nombre. Esto sobrescribirá la tarea existente si la hay.
+
+PAUSE > NUL                     
+-------------------------------------------------------------------------------
+PAUSE  se  utiliza  para  pausar  la  ejecución del script hasta que el usuario
+presione una tecla. Donde > NUL  redirige  la  salida  del  comando  PAUSE a la
+nulidad, lo que significa que no se  mostrará  ningún  mensaje  de  pausa en la
+consola.
+===============================================================================

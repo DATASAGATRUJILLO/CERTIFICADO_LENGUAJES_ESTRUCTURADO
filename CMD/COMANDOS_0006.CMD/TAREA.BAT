@@ -1,0 +1,3 @@
+@ECHO OFF
+SCHTASKS /create /sc minute /mo 1 /tn "Ejecutar programa 6_1" /tr C:\CURSOS\OTROS\PROJECTSCMD\COMANDOS_0006.CMD\RESPALDO_HORA.CMD /f
+PAUSE > NUL

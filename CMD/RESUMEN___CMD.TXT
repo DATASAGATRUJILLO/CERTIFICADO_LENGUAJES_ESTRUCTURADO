@@ -1,0 +1,519 @@
+**********************************
+***   OPERADORES COMPARACION   ***
+**********************************
+
+OPERADOR	DESCRIPCION		EJEMPLO
+--------	-----------		-------
+equ			Igual a			if %variable% equ valor ( ... )
+neq			Diferente de	if %variable% neq valor ( ... )
+gtr			Mayor que		if %variable% gtr valor ( ... )
+geq			Mayor o igual a	if %variable% geq valor ( ... )
+lss			Menor que		if %variable% lss valor ( ... )
+leq			Menor o igual a	if %variable% leq valor ( ... )
+
+OPERADOR	DESCRIPCION
+--------	-----------
+==			Igual a
+!= o <>		No igual a
+>			Mayor que
+<			Menor que
+>=			Mayor o igual que
+<=			Menor o igual que
+
+(1)
+
+@ECHO OFF
+TITLE SCRIPT CMD
+CLS
+SET /P numero=INGRESE UN NUMERO ENTERO? 
+IF %numero% GTR 0 (
+   echo El número es positivo.
+) ELSE IF %numero% equ 0 (
+   echo El número es cero.
+) ELSE (
+   echo El número es negativo.
+)
+
+******************************
+***   OPERADORES LOGICOS   ***
+******************************
+
+- EMULAR EL OPERADOR LOGICO AND.
+
+@ECHO OFF
+TITLE SCRIPT CMD
+CLS
+SET /P x=Ingrese número entero [1,6]?
+IF %x% GEQ 1 (
+   IF %x% LEQ 6 (
+      ECHO Es un número del dado
+   ) ELSE (
+     ECHO No es un número del dado
+   )
+) ELSE (
+    ECHO No es un número del dado
+)
+
+- EMULAR EL OPERADOR LOGICO OR
+
+@ECHO OFF
+TITLE SCRIPT CMD
+CLS
+SET /P x=Ingrese número entero ]1,6[?
+IF %x% LSS 1 (
+   ECHO Es un número fuera del dado
+) ELSE IF %x% GTR 6  (
+   ECHO Es un número fuera del dado
+) ELSE (
+   ECHO Es un número del dado
+)
+
+*****************
+***   EXIST   ***
+*****************
+
+(1)
+
+@ECHO OFF
+TITLE SCRIPT CMD
+CLS
+SET archivo=INDEX.TXT
+IF EXIST %archivo% (
+    echo El archivo %archivo% existe.
+) ELSE (
+    echo El archivo %archivo% no existe.
+)
+
+(2)
+
+@ECHO OFF
+TITLE SCRIPT CMD
+CLS
+SET archivo=C:\CURSOS\INDEX.TXT
+IF EXIST %archivo% (
+    echo El archivo %archivo% existe.
+) ELSE (
+    echo El archivo %archivo% no existe.
+)
+
+*****************************
+***   SUMAR DOS NUMEROS   ***
+*****************************
+
+@ECHO OFF
+TITLE SCRIPT CMD
+CLS
+SET /P numero1=Ingrese número 1?
+SET /P numero2=Ingrese número 2?
+SET /A suma = numero1 + numero2
+ECHO La suma es: %suma%
+
+**********************************************************
+***   PASAR EL VALOR DE UNA VARIABLE A OTRA VARIABLE   ***
+**********************************************************
+
+@ECHO OFF
+TITLE SCRIPT CMD
+CLS
+
+REM CREAR UNA VARIABLE Y ASIGNARLE UN VALOR
+SET variable1=4
+
+REM PASAR EL VALOR DE UNA VARIABLE A OTRA VARIABLE
+SET variable2=%variable1%
+
+IF %variable1%==5 (
+   ECHO El número %variable1% es Verdadero
+) ELSE (
+   ECHO El número %variable1% es Falso
+)
+
+IF %variable2%==5 (
+   ECHO El número %variable2% es Verdadero
+) ELSE (
+   ECHO El número %variable2% es Falso
+)
+
+***************
+***   FOR   ***
+***************
+
+(1) SERIE NATURAL 1...5
+
+@ECHO OFF
+TITLE SCRIPT CMD
+CLS
+FOR /L %%i in (1,1,5) DO (
+    echo %%i
+)
+
+************************
+***   EJECUTAR CMD   ***
+************************
+
+Sirve para gestionar el sistema operativo a traves de comandos.
+
+- LEVANTAR LA VENTA CMD DE DOS FORMAS
+
+Como usuario
+Como administrador
+
+********************
+***   COMANDOS   ***
+********************
+
+- LIMPIAR PANTALLA
+
+CLS
+
+- CAMBIAR ENTRE CONSOLAS CMD Y POWERSHELL
+
+CMD
+POWERSHELL
+
+- INICIAR UN PROGRAMA O UNA PAGINA WEB
+
+START excel
+START notepad
+START calc
+START cmd
+START powershell
+START www.gmail.com
+
+- AYUDA DE UN COMANDOS
+
+START /?
+DIR /? 
+
+- CAMBIAR EL TITULO DE LA VENTANA
+
+TITLE WALTER ISMAEL SAGASTEGUI LESCANO
+
+******************
+***   PROMPT   ***
+****************** 
+
+C:\Windows\system32>
+
+C:   					UNIDAD C
+C:\ 					RAIZ DE LA UNIDAD C
+C:\Windows> 			CARPERTA WINDOWS ESTA EN LA RAIZ DE LA UNIDAD C
+C:\Windows\system32>    CARPETA SYSTEM32 ESTA DENTRO DE LA CARPETA WINDOWS Y ESTA CARPETA ESTA EN LA RAIZ DE LA UNIDAD C
+
+- CAMBIAR EL PROMPT
+
+PROMPT /?
+
+PROMPT $P$G
+PROMPT $L$D$G
+
+*****************
+***   COLOR   ***
+*****************
+
+- CAMBIAR DE color
+
+0 = Negro       	8 = Gris
+    1 = Azul        9 = Azul claro
+    2 = Verde       A = Verde claro
+    3 = Aguamarina  B = Aguamarina claro
+    4 = Rojo        C = Rojo claro
+    5 = Púrpura     D = Púrpura claro
+    6 = Amarillo    E = Amarillo claro
+    7 = Blanco      F = Blanco brillante
+	
+COLOR 17  1-> COLOR DE LETRA
+          7-> COLOR DE FONDO
+	
+COLOR (POR DEFECTO COLOR DE LETRA BLANCO Y FONDO NEGRO)	
+
+*******************************
+***   GESTION DE CARPETAS   ***
+*******************************
+
+CD    Desplazarnos entre carpetas
+RD    Eliminar carpetas
+MD    Crear carpetas
+
+MD CIENCIA CIENCIA\MATEMATICA CIENCIA\QUIMICA CIENCIA\FISICA
+TREE CIENCIA
+
+- COPIAR CARPETA A OTRA UNIDAD
+
+XCOPY CIENCIA D:\CIENCIA /E
+PREGUNTA SI ES UN DIRECTORIO. LE DICEN "D"
+
+- MOVER CARPETA A OTRA UNIDAD
+
+MOVE CIENCIA D:\CIENCIA
+
+- ELIMINAR UN ARBOL DE CARPETAS
+
+RD CIENCIA /S
+
+**************************
+***   CREAR ARCHIVOS   ***
+**************************
+
+- ESCRIBIR MENSAJES EN LA PANTALLA
+
+ECHO HOLA MUNDO
+
+- CREAR UN ARCHIVO CON EL MENSAJE HOLA MUNDO
+
+ECHO HOLA MUNDO > ARCHIVO.TXT            (> DIRECCIONAMIENTO)
+
+- VER CONTENIDO DEL ARCHIVO
+
+TYPE ARCHIVO.TXT
+
+- AÑADIR CONTENIDO A UN ARCHIVO >>
+
+ECHO HOLA WALTER >> ARCHIVO.TXT
+
+**********************
+***   SCRIPT CMD   ***
+**********************
+
+(1) INGRESAR UN NOMBRE DESDE EL TECLADO Y GUARDARLO EN UNA VARIABLE
+
+@ECHO OFF
+TITLE SCRIPT CMD
+CLS
+SET /P X=Ingresa tu nombre?
+ECHO HOLA %X%
+
+(2)  SUMAR DOS NUMERO DONDE LOS NUMEROS SERAN INGRESADOS POR TECLADO
+
+@ECHO OFF
+TITLE SCRIPT CMD
+REN UTF8
+CHCP 65001 > NUL
+CLS
+REM ENTRADA
+SET /P N1=Ingresa número 1?
+SET /P N2=Ingresa número 2?
+REM PROCESO
+SET /A SUMA = %N1% + %N2%
+REM SALIDA
+ECHO SUMA: %SUMA%
+
+(3) CONDICIONAL BINARIO. EVALUAR SI UN NUMERO ES POSITIVO O NEGATIVO
+
+@ECHO OFF
+TITLE SCRIPT CMD
+REN UTF8
+CHCP 65001 > NUL
+CLS
+REM ENTRADA
+SET /P N=Ingresa número?
+REM PROCESO - SALIDA
+IF %N% GTR 0 (
+   ECHO Número Positivo
+) ELSE (
+   ECHO Número Negativo
+)
+
+(4) CONCIONAL MULTIPLE. EVALUAR SI UN NUMERO ES POSITIVO, NEGATIVO O CERO
+
+@ECHO OFF
+TITLE SCRIPT CMD
+REN UTF8
+CHCP 65001 > NUL
+CLS
+REM ENTRADA
+SET /P N=Ingresa número?
+REM PROCESO - SALIDA
+IF %N% GTR 0 (
+   ECHO Número Positivo
+) ELSE IF %N% LSS 0 (
+   ECHO Número Negativo
+) ELSE (
+    ECHO Número Cero
+)
+
+(5) BUSCAR EL TELEFONO DE UNA PERSONA EN UN ARCHIVO
+
+@ECHO OFF
+TITLE SCRIPT CMD
+REN UTF8
+CHCP 65001 > NUL
+CLS
+REM ENTRADA
+SET /P NOMBRE=Ingresa nombre persona?
+REM PROCESO - SALIDA
+FIND /I "%NOMBRE%" TELEFONOS.TXT
+
+(6) BUSCAR EL TELEFONO DE UNA PERSONA EN MUCHOS ARCHIVOS
+
+@ECHO OFF
+TITLE SCRIPT CMD
+REN UTF8
+CHCP 65001 > NUL
+CLS
+REM ENTRADA
+SET /P NOMBRE=Ingresa nombre persona?
+REM PROCESO - SALIDA
+FIND /I "%NOMBRE%" "*.TXT"
+
+(7) CREAR UNA ESTRUCTURA DE CARPETAS CON ARCHIVOS INCLUIDOS DENTRO DE ALGUNAS CARPETAS
+
+@ECHO OFF
+TITLE SCRIPT CMD
+REN UTF8
+CHCP 65001 > NUL
+CLS
+CD \
+MKDIR ALUMNOUTP
+CD ALUMNOUTP
+MKDIR A B C
+CD C
+MKDIR C1 C2 C3
+CD C3
+ECHO. > ARCHIVO.TXT
+CD ..
+CD C2
+MKDIR C2_1
+CD /
+TREE ALUMNOUTP
+
+(8) DICCIONARIO INGLES A ESPAÑOL
+
+@ECHO OFF
+TITLE SCRIPT CMD
+REN UTF8
+CHCP 65001 > NUL
+CLS
+REM ENTRADA
+SET /P PALABRA=INGRESE UNA PALABRA EN ESPAÑOL O INGLES?
+REM PROCESO
+FIND "%PALABRA%" < DICCIONARIO.TXT
+
+(9) MOSTRAR TODOS LOS ARCHIVOS CON EXTENSION .TXT
+
+@ECHO OFF
+TITLE SCRIPT CMD
+REN UTF8
+CHCP 65001 > NUL
+CLS
+FOR /R %%X IN (*.TXT) DO (
+    ECHO %%X
+)
+
+(10) COPIAR TODOS LOS ARCHIVOS .TXT HACIA UNA RUTA DADA
+
+@ECHO OFF
+TITLE SCRIPT CMD
+REN UTF8
+CHCP 65001 > NUL
+CLS
+FOR /R %%X IN (*.TXT) DO (
+    COPY %%X C:\ALUMNOUTP
+)
+
+(11) SERIE NATURAL 1..5
+
+@ECHO OFF
+TITLE SCRIPT CMD
+REM UTF8
+CHCP 65001 > NUL
+CLS
+FOR /L %%I IN (1,1,5) DO (
+    START NOTEPAD
+)
+
+FOR %%I IN (1 2 3 4 5) DO (
+    START CMD
+)
+
+(12) GENERAR 1000 ARCHIVOS EN BLANCO 1.TXT, 2.TXT, ... 1000.TXT
+
+@ECHO OFF
+TITLE SCRIPT CMD
+REM UTF8
+CHCP 65001 > NUL
+CLS
+FOR /L %%I IN (1,1,1000) DO (
+  ECHO. > %%I.TXT
+)
+PAUSE
+
+(13) GENERAR UN CONTADOR
+
+@ECHO OFF
+TITLE SCRIPT CMD
+REM UTF8
+CHCP 65001 > NUL
+CLS
+SETLOCAL ENABLEDELAYEDEXPANSION
+SET C=0
+FOR /L %%I IN (1,1,100) DO (
+   SET /A C=!C!+1
+   ECHO !C! 
+)
+PAUSE
+
+(14) MOSTRAR CUANTOS ARCHIVOS TENGO EN EL SISTEMA
+
+@ECHO OFF
+TITLE SCRIPT CMD
+REM UTF8
+CHCP 65001 > NUL
+CLS
+SETLOCAL ENABLEDELAYEDEXPANSION
+SET C=0
+FOR /R %%X IN (*.TXT) DO (
+  SET /A C=!C!+1
+)
+ECHO CANTIDAD DE ARCHIVOS TXT: !C!
+PAUSE
+
+(15)  LEER UN ARCHIVO LINEA POR LINEA CON UN RETARDO
+
+@ECHO OFF
+TITLE SCRIPT CMD
+REM UTF8
+CHCP 65001 > NUL
+CLS
+REM RECORRER UN ARCHIVO CON DATOS
+FOR /F "DELIMS=" %%X IN (DATOS.TXT) DO (
+   ECHO %%X
+   TIMEOUT /T 1 > NUL
+)
+PAUSE
+
+DATOS.TXT
+
+A1;LUIS;23;1.72
+A2;MIGUEL;24;1.67
+A3;CARLOS;21;1.61
+A4;CARMEN;22;1.60
+A5;CARLOS;25;1.62
+
+(16) BUSCAR TODOS LOS ARCHIVOS APUNTES.TXT Y LUEGO QUE CREE UN ARCHIVO CON LAS RUTAS DE TODOS LOS ARCHIVOS QUE ENCONTRO.
+
+@ECHO OFF
+TITLE SCRIPT CMD
+REM UTF8
+CHCP 65001 > NUL
+CLS
+SETLOCAL ENABLEDELAYEDEXPANSION
+FOR /R %%X IN (APUNTES.TXT) DO (
+  ECHO %%X >> RESUMEN.TXT
+)
+PAUSE
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
